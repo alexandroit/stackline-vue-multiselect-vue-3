@@ -1,0 +1,39 @@
+.keyboard-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.keyboard-panel {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #dbeafe;
+  background: #f8fafc;
+}
+
+.keyboard-panel h2,
+.keyboard-panel p {
+  margin: 0;
+}
+
+.toggle-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.toggle-grid button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #334155;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.toggle-grid button.active {
+  color: #fff;
+  border-color: #0f766e;
+  background: #0f766e;
+}
