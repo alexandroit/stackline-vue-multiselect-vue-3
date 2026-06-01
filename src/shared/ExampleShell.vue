@@ -1,26 +1,30 @@
 <template>
-  <section class="example-page">
-    <header class="example-head">
-      <div>
-        <p>Live example</p>
-        <h2>{{ meta.title }}</h2>
-        <span>{{ meta.description }}</span>
-      </div>
-      <a :href="stackblitzUrl" target="_blank" rel="noreferrer">Open this route in StackBlitz</a>
-    </header>
+  <section class="skin-section">
+    <div class="section-heading">
+      <p class="eyebrow">{{ meta.eyebrow || 'Vue example' }}</p>
+      <h2>{{ meta.title }}</h2>
+      <p class="example-copy">{{ meta.description }}</p>
+      <a class="stackblitz-row-link" :href="stackblitzUrl" target="_blank" rel="noopener">Open this route in StackBlitz</a>
+    </div>
 
-    <article class="example-card">
-      <div class="preview-cell">
+    <article class="example-row">
+      <div class="demo-cell">
         <slot />
-        <section v-if="events.length" class="event-log" aria-label="Recent events">
-          <strong>Events</strong>
-          <ol>
-            <li v-for="event in events" :key="event">{{ event }}</li>
-          </ol>
-        </section>
       </div>
-      <SourcePanels :sources="sources" />
+      <div class="code-cell">
+        <SourcePanels :sources="sources" />
+      </div>
     </article>
+  </section>
+
+  <section v-if="events.length" class="activity">
+    <h2>Event log</h2>
+    <p v-for="(event, index) in events" :key="event + index">{{ event }}</p>
+  </section>
+
+  <section v-else class="activity">
+    <h2>Event log</h2>
+    <p>ready</p>
   </section>
 </template>
 
@@ -44,8 +48,9 @@ const props = defineProps({
 });
 
 const stackblitzUrl = computed(() => {
-  const slug = window.location.hash.replace(/^#\/?/, '') || 'basic';
+  const hashSlug = window.location.hash.replace(/^#\/?/, '');
+  const slug = hashSlug || window.location.pathname.replace(/^\/+|\/+$/g, '') || 'basic';
   const file = encodeURIComponent('src/examples/' + slug + '/' + slug + '.component.vue');
-  return 'https://stackblitz.com/github/alexandroit/stackline-vue-multiselect-vue-3?file=' + file + '&startScript=start&initialpath=%2F' + slug;
+  return 'https://stackblitz.com/github/alexandroit/stackline-vue-multiselect-vue-3?file=' + file + '&startScript=start&initialpath=' + encodeURIComponent('/' + slug);
 });
 </script>

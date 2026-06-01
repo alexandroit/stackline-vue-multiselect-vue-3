@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
-  title: "Headless + ARIA",
-  description: "Own 100% of the HTML while Stackline supplies state and ARIA prop getters."
+  eyebrow: "Headless HTML",
+  title: "100% custom HTML with ARIA getters",
+  description: "Use Stackline state, filtering, grouping, keyboard handling, ARIA ids, and callbacks while owning every element and class."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

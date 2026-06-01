@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Grouping",
   title: "Group By",
-  description: "Group options by region and toggle entire groups."
+  description: "Group options by a field and allow group-level selection."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

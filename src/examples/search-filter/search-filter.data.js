@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Search",
   title: "Search filter",
-  description: "Searchable list with select-all support."
+  description: "Search across country names and capitals while keeping controlled Vue state."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

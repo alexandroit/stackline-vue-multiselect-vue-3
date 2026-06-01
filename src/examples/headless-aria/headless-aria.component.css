@@ -1,128 +1,180 @@
-.headless-picker {
+.headless-shell {
   display: grid;
-  gap: 14px;
-  padding: 16px;
-  border: 1px solid #0f766e38;
-  background: linear-gradient(135deg, #0f766e14, #2563eb14), #fff;
+  gap: 12px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid rgba(15, 118, 110, 0.28);
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(37, 99, 235, 0.08)), #ffffff;
 }
 
-.headless-header,
+.headless-toolbar,
 .headless-trigger,
-.headless-selected {
+.headless-group-head {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 }
 
-.headless-header {
-  justify-content: space-between;
+.headless-toolbar {
   color: #475569;
-  text-transform: uppercase;
   font-size: 12px;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
-.headless-clear,
-.headless-remove {
+.headless-toolbar button,
+.headless-chip button,
+.headless-group-head button {
+  min-height: 30px;
+  padding: 0 10px;
+  cursor: pointer;
   border: 1px solid #cbd5e1;
-  background: #fff;
+  background: #ffffff;
   color: #0f766e;
   font-weight: 900;
-  cursor: pointer;
 }
 
-.headless-clear {
-  min-height: 32px;
-  padding: 0 12px;
+.headless-toolbar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
 }
 
 .headless-trigger {
   width: 100%;
-  justify-content: space-between;
   min-height: 58px;
-  border: 1px solid #0f766e3d;
-  background: #fff;
-  color: #0f172a;
   padding: 8px 14px;
   cursor: pointer;
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  background: #ffffff;
+  color: #0f172a;
+  text-align: left;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
 }
 
 .headless-trigger span {
   display: grid;
   gap: 2px;
-  text-align: left;
+  min-width: 0;
 }
 
 .headless-trigger small {
   color: #64748b;
-  text-transform: uppercase;
+  font-size: 11px;
   font-weight: 900;
+  text-transform: uppercase;
+}
+
+.headless-trigger strong {
+  overflow-wrap: anywhere;
+  color: #0f172a;
 }
 
 .headless-trigger b {
+  flex: none;
   color: #0f766e;
-  text-transform: uppercase;
   font-size: 12px;
+  text-transform: uppercase;
 }
 
-.headless-selected {
+.headless-chips {
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
   min-height: 38px;
 }
 
 .headless-chip,
 .headless-counter {
-  min-height: 30px;
-  border-radius: 999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
+  min-height: 30px;
+  border-radius: 999px;
   font-size: 13px;
   font-weight: 900;
 }
 
 .headless-chip {
-  color: #fff;
-  background: #0f766e;
   padding: 0 6px 0 8px;
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.headless-chip button {
+  display: inline-grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
 }
 
 .headless-counter {
-  color: #0f766e;
-  background: #ecfdf5;
-  border: 1px solid #0f766e3d;
   min-width: 32px;
   padding: 0 10px;
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  background: #ecfdf5;
+  color: #0f766e;
 }
 
-.headless-menu {
+.headless-panel {
   display: grid;
   border: 1px solid #cbd5e1;
-  background: #fff;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+}
+
+.headless-search-label {
+  padding: 10px 12px 0;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .headless-search {
+  width: calc(100% - 24px);
   min-height: 40px;
-  border: 0;
-  border-bottom: 1px solid #cbd5e1;
+  margin: 8px 12px 10px;
   padding: 0 12px;
+  border: 1px solid #cbd5e1;
 }
 
-.headless-list {
+.headless-listbox {
+  display: grid;
   max-height: 300px;
   overflow: auto;
+  border-top: 1px solid #e2e8f0;
+}
+
+.headless-group + .headless-group {
+  border-top: 1px solid #e2e8f0;
+}
+
+.headless-group-head {
+  min-height: 42px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .headless-option {
   display: grid;
-  grid-template-columns: 20px 32px minmax(0, 1fr) minmax(160px, auto);
+  grid-template-columns: 20px 26px minmax(0, 1fr) minmax(96px, auto);
   align-items: center;
   gap: 10px;
   min-height: 56px;
   padding: 8px 12px;
-  border-top: 1px solid #e2e8f0;
   cursor: pointer;
+  border-top: 1px solid #e2e8f0;
 }
 
 .headless-option:hover,
@@ -132,34 +184,49 @@
   outline: none;
 }
 
-.headless-option small {
-  display: block;
+.headless-check {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #0f766e;
+  background: #ffffff;
+}
+
+.headless-check[data-checked="true"] {
+  background: #0f766e;
+  box-shadow: inset 0 0 0 4px #ffffff;
+}
+
+.headless-option-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.headless-option-copy small {
   color: #64748b;
 }
 
 .headless-option code {
   color: #64748b;
-  font-size: 11px;
+  text-align: right;
 }
 
-.headless-check {
-  width: 18px;
-  height: 18px;
-  border: 2px solid #0f766e;
-  background: #fff;
-}
-
-.headless-check[data-checked='true'] {
-  background: #0f766e;
-  box-shadow: inset 0 0 0 4px #fff;
-}
-
-@media (max-width: 720px) {
-  .headless-option {
-    grid-template-columns: 20px 32px minmax(0, 1fr);
+@media (max-width: 640px) {
+  .headless-trigger,
+  .headless-toolbar,
+  .headless-group-head {
+    align-items: stretch;
+    flex-direction: column;
   }
 
+  .headless-option {
+    grid-template-columns: 20px minmax(0, 1fr);
+  }
+
+  .headless-option .fi,
   .headless-option code {
-    grid-column: 1 / -1;
+    display: none;
   }
 }

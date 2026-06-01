@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
-  title: "State hook",
-  description: "Use the low-level state composable without the styled DOM."
+  eyebrow: "State hook",
+  title: "useMultiSelectState",
+  description: "Use the Stackline selection, filtering, grouping, badge counter, and callbacks while rendering your own controls."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

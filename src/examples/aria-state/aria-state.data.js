@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
-  title: "ARIA state audit",
-  description: "Inspect aria-selected and aria-checked in a real option list."
+  eyebrow: "ARIA audit",
+  title: "aria-selected plus aria-checked",
+  description: "Open the list and confirm the active multiselect option exposes both values for screen reader compatibility."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

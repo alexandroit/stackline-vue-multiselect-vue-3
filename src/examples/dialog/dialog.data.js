@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Dialog",
   title: "Using inside dialog",
-  description: "appendToBody avoids clipping inside overflow containers."
+  description: "Append the panel to document.body so overflow containers do not clip it."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 1);

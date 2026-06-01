@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Auto direction",
   title: "Body Overlay Auto",
-  description: "Body overlay positioning for clipped surfaces."
+  description: "Prefer opening upward only when the viewport really needs it."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 1);

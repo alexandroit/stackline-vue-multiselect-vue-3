@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Async contract",
   title: "Async object preservation",
-  description: "Selected object values remain stable when option data refreshes late."
+  description: "Refresh the option source while selected objects stay intact, then add a new item from search."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

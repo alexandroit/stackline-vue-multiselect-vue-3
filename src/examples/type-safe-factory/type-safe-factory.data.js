@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
-  title: "Typed helper API",
-  description: "Use helper APIs to keep settings and composables consistent."
+  eyebrow: "Type-safe factory",
+  title: "createVueMultiselectDropdown()",
+  description: "Bind the object shape once, then reuse typed settings, typed slots, and the typed composable helpers."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

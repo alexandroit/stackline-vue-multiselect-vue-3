@@ -1,14 +1,14 @@
 <template>
-  <div class="source-grid">
-    <section>
+  <div class="code-grid">
+    <section class="code-card">
       <strong>Vue</strong>
       <pre>{{ sources.component }}</pre>
     </section>
-    <section>
+    <section class="code-card">
       <strong>Data</strong>
       <pre>{{ sources.data }}</pre>
     </section>
-    <section>
+    <section class="code-card">
       <strong>CSS</strong>
       <pre>{{ sources.css || '/* No custom CSS for this example. */' }}</pre>
     </section>

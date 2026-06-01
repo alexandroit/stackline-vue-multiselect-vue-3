@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Remote search",
   title: "Custom search from API",
-  description: "Search against a locally simulated API response."
+  description: "Replace the search control with a Vue input and feed the dropdown with API-filtered data."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

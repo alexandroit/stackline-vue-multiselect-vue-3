@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Long lists",
   title: "Virtual Scrolling",
-  description: "Large data set with a constrained accessible list."
+  description: "Constrain a long list with keyboard-friendly scrolling and a fixed dropdown height."
 };
 export const dataSeed = largeList;
 export const selectedSeed = largeList.slice(0, 3);

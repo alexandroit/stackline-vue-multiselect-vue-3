@@ -1,19 +1,17 @@
 <template>
   <ExampleShell :meta="meta" :sources="sources" :events="events">
-    <div class="keyboard-grid">
-      <div class="keyboard-panel">
-        <h2>Keyboard switches</h2>
-        <div class="toggle-grid">
-          <button v-for="feature in features" :key="feature.key" type="button" :class="{ active: keyboard[feature.key] }" @click="keyboard[feature.key] = !keyboard[feature.key]">
-            {{ feature.label }}
-          </button>
-        </div>
-        <div class="toggle-grid">
-          <button type="button" :class="{ active: spaceOptionAction === 'toggle' }" @click="spaceOptionAction = 'toggle'">Space toggles current</button>
-          <button type="button" :class="{ active: spaceOptionAction === 'toggle-and-next' }" @click="spaceOptionAction = 'toggle-and-next'">Space toggles + next</button>
-        </div>
-        <p>{{ scenario }}</p>
+    <div class="keyboard-demo">
+      <div class="keyboard-switches" aria-label="Keyboard feature toggles">
+        <button v-for="feature in features" :key="feature.key" type="button" :class="{ active: keyboard[feature.key] }" @click="keyboard[feature.key] = !keyboard[feature.key]">
+          {{ feature.label }}
+        </button>
       </div>
+
+      <div class="space-mode-switches" aria-label="Space option action">
+        <button type="button" :class="{ active: spaceOptionAction === 'toggle' }" @click="spaceOptionAction = 'toggle'">Toggle current</button>
+        <button type="button" :class="{ active: spaceOptionAction === 'toggle-and-next' }" @click="spaceOptionAction = 'toggle-and-next'">Toggle + next</button>
+      </div>
+
       <VueMultiselectDropdown
         :data="countries"
         v-model="selected"
@@ -22,6 +20,8 @@
         @select="record('select', $event)"
         @de-select="record('de-select', $event)"
       />
+
+      <pre class="keyboard-json">{{ keyboardJson }}</pre>
     </div>
   </ExampleShell>
 </template>
@@ -32,14 +32,14 @@ import { VueMultiselectDropdown } from '@stackline/vue-multiselect-dropdown';
 import ExampleShell from '../../shared/ExampleShell.vue';
 import { countries } from '../../shared/country-data';
 import { eventLabel, makeSettings } from '../../shared/settings';
-import { meta } from './keyboard-contract.data';
+import { meta, selectedSeed } from './keyboard-contract.data';
 import componentSource from './keyboard-contract.component.vue?raw';
 import dataSource from './keyboard-contract.data.js?raw';
 import styleSource from './keyboard-contract.component.css?raw';
 import './keyboard-contract.component.css';
 
-const selected = ref(countries.slice(0, 3));
-const events = ref([]);
+const selected = ref([...selectedSeed]);
+const events = ref(['keyboard ready']);
 const spaceOptionAction = ref('toggle');
 const keyboard = reactive({
   space: true,
@@ -63,9 +63,7 @@ const settings = computed(() => makeSettings('classic', 'Keyboard contract', {
   badgeShowLimit: 3,
   keyboard: { ...keyboard, spaceOptionAction: spaceOptionAction.value }
 }));
-const scenario = computed(() => spaceOptionAction.value === 'toggle-and-next'
-  ? 'Space on an option toggles it and moves to the next enabled option.'
-  : 'Space on an option toggles itself and keeps focus there.');
+const keyboardJson = computed(() => JSON.stringify({ keyboard: settings.value.keyboard }, null, 2));
 const sources = { component: componentSource, data: dataSource, css: styleSource };
 function record(type, payload) {
   events.value.unshift(eventLabel(type, payload));

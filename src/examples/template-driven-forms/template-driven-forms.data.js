@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
-  title: "Template-style forms",
-  description: "Keep form state in refs and derive validation."
+  eyebrow: "Forms",
+  title: "Template-style form",
+  description: "Vue keeps the form values in refs while the dropdown stays controlled."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

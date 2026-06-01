@@ -1,39 +1,46 @@
-.keyboard-grid {
+.keyboard-demo {
   display: grid;
-  gap: 18px;
+  gap: 14px;
+  min-width: 0;
 }
 
-.keyboard-panel {
-  display: grid;
-  gap: 12px;
-  padding: 16px;
-  border: 1px solid #dbeafe;
-  background: #f8fafc;
-}
-
-.keyboard-panel h2,
-.keyboard-panel p {
-  margin: 0;
-}
-
-.toggle-grid {
+.keyboard-switches,
+.space-mode-switches {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.toggle-grid button {
-  min-height: 34px;
-  padding: 0 12px;
+.keyboard-switches button,
+.space-mode-switches button {
+  min-height: 32px;
+  padding: 0 10px;
+  cursor: pointer;
   border: 1px solid #cbd5e1;
-  background: #fff;
+  background: #ffffff;
   color: #334155;
   font-weight: 800;
-  cursor: pointer;
 }
 
-.toggle-grid button.active {
-  color: #fff;
+.keyboard-switches button.active {
   border-color: #0f766e;
   background: #0f766e;
+  color: #ffffff;
+}
+
+.space-mode-switches button.active {
+  border-color: #4f46e5;
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.keyboard-json {
+  margin: 0;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid #d9dee8;
+  background: #ffffff;
+  color: #334155;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
 }

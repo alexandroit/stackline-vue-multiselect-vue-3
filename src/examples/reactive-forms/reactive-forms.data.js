@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
-  title: "Reactive forms",
-  description: "Use computed validation with controlled selected arrays."
+  eyebrow: "Forms",
+  title: "Reactive form validation",
+  description: "Derive validity from Vue state and selected dropdown items."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

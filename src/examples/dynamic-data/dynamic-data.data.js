@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Dynamic",
   title: "Load dynamic data",
-  description: "Swap the available objects while preserving selected values."
+  description: "Change the option collection after the component is already mounted."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);

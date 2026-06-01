@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Counter",
   title: "All visible counter",
-  description: "Prove the +N badge disappears when all badges are visible."
+  description: "Selected badges stay visible and the overflow counter disappears when no selected items are hidden."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 6);

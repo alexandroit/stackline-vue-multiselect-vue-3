@@ -2,8 +2,9 @@ import { countries, largeList, metricItems } from '../../shared/country-data';
 import { makeSettings } from '../../shared/settings';
 
 export const meta = {
+  eyebrow: "Search fields",
   title: "Search filter by property",
-  description: "Search itemName, region, and capital."
+  description: "Use settings.searchBy so the filter checks name, capital, and region fields."
 };
 export const dataSeed = countries;
 export const selectedSeed = countries.slice(0, 3);
