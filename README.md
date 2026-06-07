@@ -26,7 +26,7 @@ https://stackblitz.com/github/alexandroit/stackline-vue-multiselect-vue-3?file=s
 ## Package
 
 ```bash
-npm install @stackline/vue-multiselect-dropdown@3.1.0 --save-exact
+npm install @stackline/vue-multiselect-dropdown@3.1.3 --save-exact
 ```
 
 ## Routes
