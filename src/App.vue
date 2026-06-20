@@ -1,8 +1,8 @@
 <template>
   <main class="page shell-page">
     <header class="topbar">
-      <p class="eyebrow">Vue 3.5.35 runtime</p>
-      <h1>@stackline/vue-multiselect-dropdown 3.1.3</h1>
+      <p class="eyebrow">Vue 3.5.38 runtime</p>
+      <h1>@stackline/vue-multiselect-dropdown 3.1.4</h1>
     </header>
 
     <section class="docs-main">
