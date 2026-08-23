@@ -64,3 +64,8 @@ npm install @stackline/vue-multiselect-dropdown@3.1.5 --save-exact
 - `#/styling` - Styling
 - `#/body-overlay-auto` - Body Overlay Auto
 - `#/all-visible-counter` - All visible counter
+
+## License
+
+The playground source is available under the [MIT License](LICENSE).
+Dependencies retain their respective licenses.
